@@ -1,10 +1,10 @@
-train_file: '/kaggle/input/power-data-en/power_data_en/train/train.json'
-test_file: '/kaggle/input/power-data-en/power_data_en/test/test.json'
-query_file: '/kaggle/input/power-data-en/power_data_en/test/test.json'
-gallery_file: '/kaggle/input/power-data-en/power_data_en/gallery_image_root/gallery_image_root.json'
-train_image_root: '/kaggle/input/power-data-en/power_data_en/train/images'
-test_image_root: '/kaggle/input/power-data-en/power_data_en/test/images'
-gallery_image_root: '/kaggle/input/power-data-en/power_data_en/gallery_image_root/images'
+train_file: '/kaggle/input/power-data-en/train/train.json'
+test_file: '/kaggle/input/power-data-en/test/test.json'
+query_file: '/kaggle/input/power-data-en/test/test.json'
+gallery_file: '/kaggle/input/power-data-en/gallery_image_root/gallery_image_root.json'
+train_image_root: '/kaggle/input/power-data-en/train/images'
+test_image_root: '/kaggle/input/power-data-en/test/images'
+gallery_image_root: '/kaggle/input/power-data-en/gallery_image_root/images'
 
 vit: 'base'
 vit_grad_ckpt: False
