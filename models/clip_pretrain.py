@@ -55,6 +55,7 @@ class CLIP_Pretrain(nn.Module):
         self.config = config
         self.max_words = config['max_words']
         self.visual_encoder, vision_width = create_vit(vit,image_size, vit_grad_ckpt, vit_ckpt_layer, 0)
+        # 改为large基础模型
         if vit=='base':
             checkpoint = torch.hub.load_state_dict_from_url(
                 url="https://dl.fbaipublicfiles.com/deit/deit_base_patch16_224-b5f2ef4d.pth",
