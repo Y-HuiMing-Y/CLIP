@@ -63,7 +63,7 @@ class CLIP_Pretrain(nn.Module):
             state_dict = checkpoint["model"]     
             msg = self.visual_encoder.load_state_dict(state_dict,strict=False)      
                
-        self.tokenizer = BertTokenizer.from_pretrained('bert-large-uncased') #Download ‘bert-base-chinese’ in advance and save it to a local path 
+        self.tokenizer = BertTokenizer.from_pretrained('bert-large-uncased') #Download ‘bert-large-uncased’ in advance and save it to a local path 
         encoder_config = BertConfig.from_json_file(med_config)
         encoder_config.encoder_width = vision_width
 
