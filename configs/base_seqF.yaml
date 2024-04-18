@@ -6,8 +6,8 @@ train_image_root: '/kaggle/input/power-data-en/train/images'
 test_image_root: '/kaggle/input/power-data-en/test/images'
 gallery_image_root: '/kaggle/input/power-data-en/gallery_image_root/images'
 
-vit: 'base'
-vit_grad_ckpt: False
+vit: 'large'
+vit_grad_ckpt: True
 vit_ckpt_layer: 0
 image_size: 224
 batch_size_train: 16
@@ -15,7 +15,7 @@ batch_size_test: 16
 
 # optimizer
 weight_decay: 0.05
-init_lr: 3e-5
+init_lr: 1e-4
 min_lr: 1e-7
 k_test: 10
 max_words: 80
