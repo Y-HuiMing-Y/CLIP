@@ -55,7 +55,8 @@ class CLIP_Pretrain(nn.Module):
         self.config = config
         self.max_words = config['max_words']
         self.visual_encoder, vision_width = create_vit(vit,image_size, vit_grad_ckpt, vit_ckpt_layer, 0)
-        # vit模块的更改,text_encoder更改为bert-base-cased
+        
+        # vit模块的更改,text_encoder更改为bert-base-chinese
         if vit=='base':
             checkpoint = torch.hub.load_state_dict_from_url(
                 url="https://dl.fbaipublicfiles.com/deit/deit_base_patch16_224-b5f2ef4d.pth",
@@ -63,11 +64,11 @@ class CLIP_Pretrain(nn.Module):
             state_dict = checkpoint["model"]     
             msg = self.visual_encoder.load_state_dict(state_dict,strict=False)      
                
-        self.tokenizer = BertTokenizer.from_pretrained('bert-base-cased') #Download ‘bert-base-cased’ in advance and save it to a local path 
+        self.tokenizer = BertTokenizer.from_pretrained('bert-base-chinese') #Download ‘bert-base-chinese’ in advance and save it to a local path 
         encoder_config = BertConfig.from_json_file(med_config)
         encoder_config.encoder_width = vision_width
 
-        self.text_mlm_encoder = BertForMaskedLM.from_pretrained('bert-base-cased',config=encoder_config)
+        self.text_mlm_encoder = BertForMaskedLM.from_pretrained('bert-base-chinese',config=encoder_config)
         self.text_encoder = self.text_mlm_encoder.bert
 
         text_width = self.text_encoder.config.hidden_size
