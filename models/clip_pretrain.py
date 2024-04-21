@@ -62,7 +62,13 @@ class CLIP_Pretrain(nn.Module):
                 url="https://dl.fbaipublicfiles.com/deit/deit_base_patch16_224-b5f2ef4d.pth",
                 map_location="cpu", check_hash=True)
             state_dict = checkpoint["model"]     
-            msg = self.visual_encoder.load_state_dict(state_dict,strict=False)      
+            msg = self.visual_encoder.load_state_dict(state_dict,strict=False)
+        elif vit == 'deit_base_patch16_384':
+            checkpoint = torch.hub.load_state_dict_from_url(
+                url="https://dl.fbaipublicfiles.com/deit/deit_base_patch16_384-8de9b5d1.pth",
+                map_location="cpu", check_hash=True)
+            state_dict = checkpoint["model"]
+            msg = self.visual_encoder.load_state_dict(state_dict, strict=False)
                
         self.tokenizer = BertTokenizer.from_pretrained('bert-base-chinese') #Download ‘bert-base-chinese’ in advance and save it to a local path 
         encoder_config = BertConfig.from_json_file(med_config)
