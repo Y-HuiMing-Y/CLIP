@@ -9,7 +9,7 @@ gallery_image_root: '/kaggle/input/power-data-zh/gallery_image_root/images'
 vit: 'base'
 vit_grad_ckpt: False
 vit_ckpt_layer: 0
-image_size: 224
+image_size: 384
 batch_size_train: 16
 batch_size_test: 16
 
