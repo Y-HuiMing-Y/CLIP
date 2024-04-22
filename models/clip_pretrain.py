@@ -57,7 +57,7 @@ class CLIP_Pretrain(nn.Module):
         self.visual_encoder, vision_width = create_vit(vit,image_size, vit_grad_ckpt, vit_ckpt_layer, 0)
         
         # vit模块的更改,text_encoder更改为bert-base-chinese
-        if vit=='base':
+        if vit=='deit_base_patch16_224':
             checkpoint = torch.hub.load_state_dict_from_url(
                 url="https://dl.fbaipublicfiles.com/deit/deit_base_patch16_224-b5f2ef4d.pth",
                 map_location="cpu", check_hash=True)
