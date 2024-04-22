@@ -26,7 +26,7 @@ def create_vit(vit, image_size, use_grad_checkpointing=False, ckpt_layer=0, drop
                                            drop_path_rate=0 or drop_path_rate
                                           )   
     elif vit=='deit_tiny_patch16_224':
-        vision_width = 768
+        vision_width = 192
         visual_encoder = VisionTransformer(img_size=image_size, patch_size=16, embed_dim=vision_width, depth=12,
                                            num_heads=12, use_grad_checkpointing=use_grad_checkpointing, ckpt_layer=ckpt_layer,
                                            drop_path_rate=0 or drop_path_rate
