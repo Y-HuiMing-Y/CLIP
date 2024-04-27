@@ -68,7 +68,7 @@ class CLIP_Pretrain(nn.Module):
         encoder_config = BertConfig.from_json_file(med_config)
         encoder_config.encoder_width = vision_width
 
-        self.text_mlm_encoder = BertForMaskedLM.from_pretrained('bert-base-uncased',config=encoder_config, ignore_mismatched_sizes=True)
+        self.text_mlm_encoder = BertForMaskedLM.from_pretrained('bert-base-uncased',config=encoder_config)
         self.text_encoder = self.text_mlm_encoder.bert
 
         text_width = self.text_encoder.config.hidden_size
