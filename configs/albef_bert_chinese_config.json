@@ -22,6 +22,6 @@
   "pooler_type": "first_token_transform",
   "type_vocab_size": 2,
   "vocab_size": 30522,
-  "encoder_width": 1024,
+  "encoder_width": 768,
   "fusion_layer": 6
 }
