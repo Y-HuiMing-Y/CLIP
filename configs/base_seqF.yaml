@@ -23,6 +23,7 @@ window_size: 50
 
 #CL
 max_epoch: 50
-task: ['BYQ', 'DZGL', 'FDJ', 'JYZ', 'NC', 'RQLJ', 'SDDX', 'SDGT', 'SLJ', 'ZQLJ']
+# task: ['BYQ', 'DZGL', 'FDJ', 'JYZ', 'NC', 'RQLJ', 'SDDX', 'SDGT', 'SLJ', 'ZQLJ']
+task: ['SDGT']
 base_mode: 'seqF'
 
